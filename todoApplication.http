@@ -1,0 +1,93 @@
+### HOME API
+GET http://localhost:3000/
+
+
+### GET TODOS based on Scenarios API 1
+GET http://localhost:3000/todos/
+
+### Scenario 1
+GET http://localhost:3000/todos/?status=TO%20DO
+
+### Scenario 2
+GET http://localhost:3000/todos/?priority=HIGH
+
+### Scenario 3
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+
+### Scenario 4
+GET http://localhost:3000/todos/?search_q=Buy
+
+### Scenario 5
+GET http://localhost:3000/todos/?category=WORK&status=DONE
+
+### Scenario 6
+GET http://localhost:3000/todos/?category=HOME
+
+### Scenario 7
+GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
+
+
+### GET TODOs TODO API 2
+GET http://localhost:3000/todos/3/
+
+
+### GET AGENDA based on Date Query API 3
+GET http://localhost:3000/agenda/?date=2021-02-22
+
+
+### POST TODO API 4
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+ "id": 6,
+ "todo": "Finalize event theme",
+ "priority": "LOW",
+ "status": "TO DO",
+ "category": "HOME",
+ "dueDate": "2021-02-22"
+}
+
+
+### PUT TODOs based on TODOID API 5
+### Scenario 1: Update status
+PUT http://localhost:3000/todos/4/
+Content-Type: application/json
+
+{ "status": "DONE" }
+
+
+### Scenario 2: Update priority
+
+PUT http://localhost:3000/todos/5/
+Content-Type: application/json
+
+{ "priority": "HIGH" }
+
+
+### Scenario 3: Update todo
+PUT http://localhost:3000/todos/6/
+Content-Type: application/json
+
+{
+"todo": "Clean the garden"
+}
+
+
+### Scenario 4: Update category
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json
+
+{ "category": "LEARNING" }
+
+
+### Scenario 5: Update dueDate
+
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json
+
+{ "dueDate": "2021-01-12" }
+
+
+### DELETE TODO API 6
+DELETE http://localhost:3000/todos/5/
